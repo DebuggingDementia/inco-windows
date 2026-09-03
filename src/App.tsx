@@ -15,12 +15,19 @@ import Warranty from '@/components/Warranty';
 import Trust from '@/components/Trust';
 import FinalCta from '@/components/FinalCta';
 import Footer from '@/components/Footer';
+import AllWindowsPage from '@/components/AllWindowsPage';
+import GlassEnergyPage from '@/components/GlassEnergyPage';
+import WindowProductPage from '@/components/WindowProductPage';
+import { windowProducts } from '@/data/windowProducts';
 
 export default function App() {
+  const isWarrantyPage = window.location.pathname === '/warranty';
+  const path = window.location.pathname;
+  const product = path.startsWith('/windows/') ? windowProducts.find(p => `/windows/${p.slug}` === path) : undefined;
   return (
     <div className="min-h-screen bg-brand-bg text-brand-text">
       <Navbar />
-      <Hero />
+      {isWarrantyPage ? <Warranty /> : path === '/windows' ? <AllWindowsPage /> : path === '/windows/glass-energy' ? <GlassEnergyPage /> : product ? <WindowProductPage product={product} /> : <><Hero />
       <WindowStyles />
       <Doors />
       <QuoteForm />
@@ -32,9 +39,9 @@ export default function App() {
       <InteriorCasing />
       <Installation />
       <WhyInco />
-      <Warranty />
       <Trust />
       <FinalCta />
+      </>}
       <Footer />
     </div>
   );

@@ -4,43 +4,51 @@ import AnimatedSection from './AnimatedSection';
 const windowTypes = [
   {
     name: 'Awning Windows',
+    href: '/windows/awning',
     desc: 'Hinged at the top and opening outward from the bottom, allowing fresh air while helping keep rain outside.',
-    image: '/images/window-styles/2026-08-15_22.41.01.jpg',
+    image: '/images/window-styles/Awning Window.png',
   },
   {
     name: 'Fixed / Picture Windows',
+    href: '/windows/fixed-picture',
     desc: 'Non-opening windows with large unobstructed glass areas for natural light and outdoor views.',
-    image: '/images/window-styles/2026-08-15_22.41.11.jpg',
+    image: '/images/window-styles/Picture Window 1.png',
   },
   {
     name: 'Slider Windows',
+    href: '/windows/single-slider',
     desc: 'Smooth side-to-side operation, ideal for wide openings and modern homes.',
-    image: '/images/window-styles/2026-08-15_22.41.17.jpg',
+    image: '/images/window-styles/Single Slider.png',
   },
   {
     name: 'Hung Windows',
+    href: '/windows/single-hung',
     desc: 'Classic vertical operation with easy maintenance and timeless styling.',
-    image: '/images/window-styles/2026-08-15_22.41.24.jpg',
+    image: '/images/window-styles/Single Hung.png',
   },
   {
     name: 'Shaped Windows',
+    href: '/windows/architectural-specialty-shape',
     desc: 'Custom windows available in arches, circles, triangles and other geometric configurations.',
     image: '/images/window-styles/2026-08-15_22.41.30.jpg',
   },
   {
     name: 'Bay & Bow Windows',
+    href: '/windows/bay',
     desc: 'Windows extending outward from the home to create additional interior space and panoramic views.',
-    image: '/images/window-styles/2026-08-15_22.41.37.jpg',
+    image: '/images/window-styles/Bay Window.png',
   },
   {
     name: 'Turn & Tilt Windows',
+    href: '/windows/tilt-turn',
     desc: 'Two opening options: tilt inward from the top or swing inward from the side.',
-    image: '/images/window-styles/2026-08-15_22.41.44.jpg',
+    image: '/images/window-styles/Turn and Tilt 1.png',
   },
   {
     name: 'Casement Windows',
+    href: '/windows/casement',
     desc: 'Side-hinged windows opening outward using a crank.',
-    image: '/images/window-styles/2026-08-15_22.41.49.jpg',
+    image: '/images/window-styles/Casement Window .png',
   },
 ];
 
@@ -63,8 +71,9 @@ export default function WindowStyles() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
           {windowTypes.map((type, i) => (
-            <motion.div
+            <motion.a
               key={type.name}
+              href={type.href}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -81,7 +90,7 @@ export default function WindowStyles() {
               </div>
               <h3 className="font-semibold text-brand-text mb-1.5">{type.name}</h3>
               <p className="text-sm text-brand-muted leading-relaxed">{type.desc}</p>
-            </motion.div>
+            </motion.a>
           ))}
         </div>
       </div>

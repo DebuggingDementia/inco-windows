@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, ArrowRight } from 'lucide-react';
+import { Menu, X, Phone, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { windowMenu } from '@/data/windowProducts';
 
 const navLinks = [
-  { label: 'Windows', href: '#windows' },
-  { label: 'Doors', href: '#doors' },
-  { label: 'Services', href: '#installation' },
-  { label: 'Warranty Info', href: '#warranty' },
+  { label: 'Windows', href: '/#windows' },
+  { label: 'Doors', href: '/#doors' },
+  { label: 'Services', href: '/#installation' },
+  { label: 'Warranty Info', href: '/warranty' },
 ];
 
 export default function Navbar() {
@@ -39,7 +40,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center h-20 sm:h-[88px]">
             {/* Logo */}
-            <a href="#" className="flex-shrink-0">
+            <a href="/" className="flex-shrink-0">
               <img
                 src="/inco-logo.svg"
                 alt="INCO Windows & Doors"
@@ -49,7 +50,21 @@ export default function Navbar() {
 
             {/* Desktop nav links */}
             <nav className="hidden lg:flex items-center ml-12 gap-1">
-              {navLinks.map((link) => (
+              {navLinks.map((link) => link.label === 'Windows' ? (
+                <div key={link.label} className="relative group/nav">
+                  <a href="/windows" className="relative px-4 py-2 text-sm font-medium text-[#AAA7A2] hover:text-white flex items-center gap-1">Windows <ChevronDown size={14}/></a>
+                  <div className="invisible opacity-0 group-hover/nav:visible group-hover/nav:opacity-100 absolute top-full left-0 pt-3 transition-all">
+                    <div className="w-[720px] max-w-[calc(100vw-2rem)] bg-brand-card border border-brand-border rounded-2xl p-3 shadow-2xl">
+                      <a href={windowMenu[0][1]} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg">{windowMenu[0][0]}</a>
+                      <a href={windowMenu[1][1]} className="block px-4 py-2 mb-2 text-sm font-medium text-brand-orange bg-brand-orange/10 hover:bg-brand-orange/15 rounded-lg">{windowMenu[1][0]}</a>
+                      <div className="grid grid-cols-2 gap-x-4 border-t border-brand-border pt-2">
+                        <div>{windowMenu.slice(2, 9).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
+                        <div>{windowMenu.slice(9).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
                 <a
                   key={link.label}
                   href={link.href}
@@ -66,7 +81,7 @@ export default function Navbar() {
 
             {/* Right side */}
             <a
-              href="#quote"
+              href="/#quote"
               className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-brand-orange hover:bg-brand-orange-hover text-white text-sm font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-brand-orange/20"
             >
               Free Quote
@@ -96,7 +111,7 @@ export default function Navbar() {
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex items-center justify-between mb-12">
-                <a href="#" className="flex-shrink-0">
+                <a href="/" className="flex-shrink-0">
                   <img
                     src="/inco-logo.svg"
                     alt="INCO Windows & Doors"
@@ -113,7 +128,10 @@ export default function Navbar() {
               </div>
 
               <nav className="flex flex-col gap-1">
+                <p className="text-xs uppercase tracking-widest text-brand-orange mt-1">Windows</p>
+                <div className="max-h-[42vh] overflow-y-auto border-b border-brand-border pb-3">{windowMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm text-brand-muted">{label}</a>)}</div>
                 {navLinks.map((link, i) => (
+                  link.label === 'Windows' ? null :
                   <motion.a
                     key={link.label}
                     href={link.href}
@@ -137,7 +155,7 @@ export default function Navbar() {
                   403-617-3082
                 </a>
                 <a
-                  href="#quote"
+                  href="/#quote"
                   onClick={() => setMobileOpen(false)}
                   className="flex items-center justify-center gap-2 px-6 py-4 bg-brand-orange hover:bg-brand-orange-hover text-white font-medium rounded-full transition-all"
                 >

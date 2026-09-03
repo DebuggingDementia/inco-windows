@@ -41,7 +41,7 @@ export default function Hero() {
                 <ArrowRight size={16} />
               </a>
               <a
-                href="#windows"
+                href="/windows"
                 className="inline-flex items-center justify-center gap-2 px-7 py-4 border border-brand-border hover:border-brand-muted/30 text-brand-text font-medium rounded-full transition-all duration-300 hover:-translate-y-0.5"
               >
                 Explore Windows

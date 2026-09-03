@@ -1,32 +1,43 @@
-import { Shield } from 'lucide-react';
+import { ArrowRight, Check, CircleX, FileCheck2, GlassWater, Handshake, Images, Mail, Phone, ShieldCheck, SlidersHorizontal, Wrench } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 
+const covered = ['Rot','Corrosion','Cracking','Warping','Pitting','Peeling','Blistering','Abnormal non-uniform fading'];
+const excluded = ['Improper installation','Accident, fire or flood','Abuse or poor maintenance','Oxidation or normal weather exposure','Excessive heat','Chemical contact','Causes unrelated to manufacture'];
+const activation = ['Full name','Installation address','Contract or invoice number','Installation completion date','Product information','Proof of full payment'];
+const claims = [
+  ['Submit Your Information','Provide contact information, installation address, contract number, and a description of the concern.',FileCheck2],
+  ['Add Photos or Videos','Clear photos or a short video help the service team understand the issue and determine next steps more quickly.',Images],
+  ['Claim Review','The team determines whether inspection, a service appointment, a replacement component, or additional information is required.',ShieldCheck],
+  ['Service and Resolution','If the concern qualifies, INCO coordinates appropriate service according to the warranty terms.',Wrench],
+] as const;
+
+function Heading({label,title,children}:{label:string;title:string;children?:React.ReactNode}) {
+  return <div className="max-w-3xl mb-9"><p className="text-xs font-semibold uppercase tracking-[.2em] text-brand-orange mb-3">{label}</p><h2 className="text-3xl sm:text-4xl font-bold">{title}</h2>{children}</div>;
+}
+function List({items,bad=false}:{items:string[];bad?:boolean}) {
+  const Icon=bad?CircleX:Check; return <ul className="grid sm:grid-cols-2 gap-3">{items.map(x=><li key={x} className="flex gap-3 text-sm text-brand-muted"><Icon size={16} className={`${bad?'text-brand-muted':'text-brand-orange'} mt-0.5 shrink-0`}/>{x}</li>)}</ul>;
+}
+
 export default function Warranty() {
-  return (
-    <section id="warranty" className="py-20 sm:py-28 bg-brand-bg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimatedSection>
-          <div className="bg-brand-card border border-brand-border rounded-3xl p-8 sm:p-12 lg:p-16 text-center">
-            <div className="w-14 h-14 rounded-2xl bg-brand-orange/10 flex items-center justify-center mx-auto mb-6">
-              <Shield size={26} className="text-brand-orange" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Warranty <span className="text-brand-orange">Information</span>
-            </h2>
-            <p className="text-brand-muted leading-relaxed max-w-xl mx-auto mb-8">
-              INCO stands behind the quality of our products. Our windows are backed by
-              comprehensive warranty coverage for your peace of mind. Contact us for
-              detailed warranty information specific to your products.
-            </p>
-            <a
-              href="#quote"
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-brand-orange hover:bg-brand-orange-hover text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-brand-orange/20"
-            >
-              Contact Us for Details
-            </a>
-          </div>
-        </AnimatedSection>
-      </div>
-    </section>
-  );
+  return <main id="warranty" className="bg-brand-bg">
+    <section className="relative py-16 sm:py-24 border-b border-brand-border overflow-hidden"><div className="absolute -top-40 right-0 w-[520px] h-[520px] bg-brand-orange/5 blur-[110px] rounded-full"/><div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.4fr_.6fr] gap-12 items-center"><AnimatedSection><p className="text-brand-orange font-semibold mb-4">Warranty You Can Count On</p><h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">60-Year Window <span className="text-brand-orange">Warranty</span></h1><h2 className="text-xl sm:text-2xl font-medium mt-5">Long-Term Protection for Your Home</h2><p className="text-brand-muted text-lg leading-relaxed mt-6 max-w-3xl">At INCO Windows & Doors, our commitment to your home continues long after the installation is complete. We stand behind the quality of our products and workmanship with reliable warranty coverage designed to provide lasting confidence and peace of mind.</p><p className="font-semibold mt-6">Built for Alberta. Installed with care. Protected for years to come.</p></AnimatedSection><AnimatedSection delay={.1} className="hidden lg:flex justify-center"><div className="w-64 h-64 flex items-center justify-center"><img src="/images/warranty/60-year-warranty.png" alt="60 Years Warranty" className="w-full h-full object-contain" /></div></AnimatedSection></div></section>
+
+    <section className="py-16 sm:py-20"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><AnimatedSection><Heading label="Coverage overview" title="Warranty at a Glance"/></AnimatedSection><div className="grid md:grid-cols-3 gap-5">{[['Vinyl Components','Eligible vinyl frames and sashes are covered against confirmed material or manufacturing defects.',ShieldCheck],['Insulated Glass Units','Eligible sealed glass units are covered against confirmed thermal-seal failure.',GlassWater],['Hardware','Eligible factory-installed operating hardware is covered against confirmed manufacturing defects.',SlidersHorizontal]].map(([t,s,I]:any,i)=><AnimatedSection key={t} delay={i*.06}><article className="h-full bg-brand-card border border-brand-border rounded-3xl p-7"><I className="text-brand-orange mb-5"/><p className="text-xs uppercase tracking-[.16em] text-brand-muted">{t}</p><p className="text-3xl font-bold my-2">60 <span className="text-brand-orange">Years</span></p><p className="text-sm text-brand-muted leading-relaxed">{s}</p></article></AnimatedSection>)}</div></div></section>
+
+    <section className="py-16 sm:py-20 bg-brand-surface border-y border-brand-border"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><AnimatedSection><Heading label="Product coverage" title="Vinyl Components — 60 Years"><p className="text-brand-muted mt-4">Eligible vinyl frames and sashes are covered against confirmed defects in material or manufacture.</p></Heading></AnimatedSection><div className="grid lg:grid-cols-2 gap-5"><div className="bg-brand-card border border-brand-border rounded-3xl p-7"><h3 className="text-xl font-semibold mb-6">Covered</h3><List items={covered}/></div><div className="bg-brand-card border border-brand-border rounded-3xl p-7"><h3 className="text-xl font-semibold mb-6">Not Covered</h3><List items={excluded} bad/><p className="text-sm text-brand-muted mt-6 pt-6 border-t border-brand-border">Painting, coating, or covering the vinyl after delivery voids coverage for the affected component.</p></div></div></div></section>
+
+    <section className="py-16 sm:py-20"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><AnimatedSection><Heading label="Sealed glass coverage" title="Insulated Glass Units — 60 Years"><p className="text-brand-muted mt-4">Eligible sealed glass units are covered for up to 60 years against permanent loss of clear vision caused by confirmed thermal-seal failure.</p></Heading></AnimatedSection><div className="grid lg:grid-cols-2 gap-5"><div className="bg-brand-card border border-brand-border rounded-3xl p-7"><List items={['Assessment under normal daylight from approximately 3 m / 10 ft','Minor marks or visual imperfections that do not materially interfere with the view are not covered','Reasonable replacement labour is included during the first 20 years for approved original-installation claims','After 20 years, labour and related service costs are the Owner’s responsibility']}/></div><div className="bg-brand-card border border-brand-border rounded-3xl p-7"><p className="text-3xl font-bold text-brand-orange">15 Years</p><p className="text-sm text-brand-muted mt-3">Decorative grilles sealed inside a glass unit are covered for 15 years.</p><p className="text-sm text-brand-muted mt-6 pt-6 border-t border-brand-border">Impact breakage, scratches, and condensation on an exposed glass surface are not thermal-seal failures.</p></div></div></div></section>
+
+    <section className="py-16 sm:py-20 bg-brand-surface border-y border-brand-border"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8"><Heading label="Operating components" title="Hardware — 60 Years"/><div className="bg-brand-card border border-brand-border rounded-3xl p-7"><p className="text-brand-muted">Eligible factory-installed operating hardware is covered for 60 years against confirmed manufacturing defects.</p><p className="font-semibold mt-6 mb-3">Excluded unless otherwise stated in writing</p><p className="text-sm text-brand-muted">Adjustment · Lubrication · Normal wear · Forced operation · Night locks · Limit latches</p></div></div></section>
+
+    <section className="py-16 sm:py-20"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><Heading label="Approved claims" title="Repair or Replacement"><p className="text-brand-muted mt-4">After receiving a timely written claim, INCO must be given a reasonable opportunity to inspect the product.</p></Heading><div className="grid lg:grid-cols-3 gap-5">{[['Repair or replace','For an approved claim, INCO may repair the defect or replace the affected product or component at its option.'],['Comparable replacement','If the original item is discontinued, a reasonably comparable item of equal or better functional quality may be used. Exact colour, profile, or design match is not guaranteed.'],['Owner costs','Unless labour is expressly included, the Owner may be responsible for labour, travel, delivery, access, removal, reinstallation, and finishing costs. Any Owner-assigned amount must be paid before work is scheduled.']].map(([t,s])=><article key={t} className="bg-brand-card border border-brand-border rounded-3xl p-7"><h3 className="font-semibold text-lg mb-3">{t}</h3><p className="text-sm text-brand-muted leading-relaxed">{s}</p></article>)}</div></div></section>
+
+    <section className="py-8"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="bg-brand-card border border-brand-orange/25 rounded-[2rem] p-8 sm:p-12 flex flex-col sm:flex-row gap-7"><Handshake className="text-brand-orange shrink-0"/><div><p className="text-brand-orange font-semibold mb-2">Planning to sell your home?</p><h2 className="text-3xl sm:text-4xl font-bold">Transferable Warranty Protection</h2><p className="text-brand-muted mt-5 max-w-3xl">Eligible warranty coverage may be transferred to the next homeowner. The new homeowner must complete required warranty registration within 30 days of taking ownership. Transfer conditions may vary depending on product and manufacturer.</p></div></div></div></section>
+
+    <section className="py-16 sm:py-20"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10"><div><Heading label="Registration" title="How to Activate Your Warranty"><p className="text-brand-muted mt-4">Warranty should be registered within 30 days after installation is completed.</p></Heading><p className="text-brand-muted">Warranty coverage becomes valid once the project has been completed and the contract balance has been paid in full.</p><a href="#warranty-support" className="mt-8 inline-flex items-center gap-2 px-7 py-4 bg-brand-orange rounded-full font-medium">Register My Warranty <ArrowRight size={16}/></a></div><div className="bg-brand-card border border-brand-border rounded-3xl p-7"><h3 className="font-semibold mb-5">Information that may be required</h3><ul className="space-y-3">{activation.map(x=><li key={x} className="flex gap-3 text-sm text-brand-muted"><Check size={16} className="text-brand-orange"/>{x}</li>)}</ul></div></div></section>
+
+    <section className="py-16 sm:py-20 bg-brand-surface border-y border-brand-border"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><Heading label="Service process" title="How to Submit a Warranty Claim"/><div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">{claims.map(([t,s,I],i)=><article key={t} className="bg-brand-card border border-brand-border rounded-3xl p-6"><div className="flex justify-between"><I className="text-brand-orange"/><span className="text-3xl font-bold text-brand-border">0{i+1}</span></div><h3 className="font-semibold mt-5 mb-3">{t}</h3><p className="text-sm text-brand-muted leading-relaxed">{s}</p></article>)}</div><a href="#warranty-support" className="mt-8 inline-flex items-center gap-2 px-7 py-4 bg-brand-orange rounded-full font-medium">Submit a Warranty Claim <ArrowRight size={16}/></a></div></section>
+
+    <section id="warranty-support" className="py-20"><div className="max-w-4xl mx-auto px-4 text-center"><div className="bg-brand-card border border-brand-border rounded-[2rem] p-8 sm:p-12"><ShieldCheck className="text-brand-orange mx-auto mb-5"/><h2 className="text-3xl sm:text-4xl font-bold">We’re Here When You Need Us</h2><p className="text-brand-muted mt-5">Your comfort and confidence matter to our family. If something does not look or operate as expected, contact INCO Windows & Doors. Our team will review your concern carefully and help you understand the next steps.</p><p className="font-semibold mt-6">INCO Windows & Doors<br/><span className="text-brand-orange">From Family to Family.</span></p><div className="flex flex-col sm:flex-row justify-center gap-3 mt-8"><a href="tel:+14031234567" className="px-7 py-3.5 rounded-full bg-brand-orange inline-flex justify-center gap-2"><Phone size={16}/>Call Us</a><a href="mailto:info@incowindows.ca" className="px-7 py-3.5 rounded-full border border-brand-border inline-flex justify-center gap-2"><Mail size={16}/>Email Our Team</a></div></div></div></section>
+  </main>;
 }

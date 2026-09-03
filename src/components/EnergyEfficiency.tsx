@@ -72,6 +72,7 @@ export default function EnergyEfficiency() {
             );
           })}
         </div>
+        <div className="text-center mt-10"><a href="/windows/glass-energy" className="inline-flex px-7 py-3.5 rounded-full border border-brand-border hover:border-brand-orange text-brand-text">Explore More</a></div>
       </div>
     </section>
   );

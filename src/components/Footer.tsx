@@ -2,12 +2,12 @@ import { Star } from 'lucide-react';
 
 const footerLinks = {
   Products: [
-    { label: 'Windows', href: '#windows' },
-    { label: 'Doors', href: '#doors' },
+    { label: 'Windows', href: '/#windows' },
+    { label: 'Doors', href: '/#doors' },
   ],
   Services: [
-    { label: 'Installation', href: '#installation' },
-    { label: 'Warranty Info', href: '#warranty' },
+    { label: 'Installation', href: '/#installation' },
+    { label: 'Warranty Info', href: '/warranty' },
   ],
   Contact: [
     { label: '(403) 123-4567', href: 'tel:+14031234567' },
