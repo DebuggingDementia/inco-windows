@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 
-interface ColorOption {
+export interface WindowColor {
   name: string;
   hex: string;
   image?: string;
 }
 
-const colors: ColorOption[] = [
+export const windowColors: WindowColor[] = [
   { name: 'Bright White', hex: '#F5F5F5', image: '/images/window-colors/Bright_White_Bay_Window.png' },
   { name: 'Rainware White', hex: '#E8E5DF', image: '/images/window-colors/Rainware_White_Bay_Window.png' },
   { name: 'Ice White', hex: '#EDF1F4', image: '/images/window-colors/Ice_White_Bay_Window.png' },
@@ -68,12 +68,12 @@ const FALLBACK_IMAGE = '/images/window-colors/Bright_White_Bay_Window.png';
 export default function ColorCollection() {
   const [selected, setSelected] = useState('Bright White');
 
-  const selectedColor = colors.find((c) => c.name === selected) ?? colors[0];
+  const selectedColor = windowColors.find((c) => c.name === selected) ?? windowColors[0];
   const previewImage = selectedColor.image || FALLBACK_IMAGE;
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      colors.forEach((c) => {
+      windowColors.forEach((c) => {
         if (c.image) {
           const img = new Image();
           img.src = c.image;
@@ -120,7 +120,7 @@ export default function ColorCollection() {
         </AnimatedSection>
 
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-[repeat(13,minmax(0,1fr))] gap-3 sm:gap-4">
-          {colors.map((color, i) => (
+          {windowColors.map((color, i) => (
             <motion.button
               key={color.name}
               initial={{ opacity: 0, scale: 0.8 }}

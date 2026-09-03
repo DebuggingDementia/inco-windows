@@ -93,7 +93,16 @@ const grillPatterns = [
   },
 ];
 
-const grillProfiles = ['5/16"', 'Georgian', 'Pencil', '5/8"', '1"'];
+const grillProfiles = [
+  { name: '5/16"', width: 2 },
+  { name: 'Georgian', width: 5, decorative: true },
+  { name: 'Pencil', width: 1 },
+  { name: '5/8"', width: 7 },
+  { name: '1"', width: 11 },
+];
+
+// Add confirmed grill colours here when final product content is available.
+const grillColours: Array<{ name: string; value: string }> = [];
 
 export default function GrillStyles() {
   return (
@@ -132,33 +141,59 @@ export default function GrillStyles() {
         </div>
 
         <AnimatedSection>
-          <div className="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-10">
-            <h3 className="text-xl font-semibold mb-6 text-center">
-              Grill Profiles & Colours
-            </h3>
-            <div className="rounded-2xl overflow-hidden mb-6">
-              <img
-                src="/images/grills/2026-08-15_22.42.14.jpg"
-                alt="Grill profiles and colour options"
-                className="w-full h-auto object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-              {grillProfiles.map((profile) => (
-                <div
-                  key={profile}
-                  className="px-5 py-3 bg-brand-surface border border-brand-border rounded-xl text-sm text-brand-muted hover:text-brand-text hover:border-brand-orange/20 transition-all cursor-default"
-                >
-                  {profile}
-                </div>
-              ))}
-            </div>
-            <p className="text-sm text-brand-muted/60 text-center mt-6">
-              Available in a variety of colours to match your window frame selection.
-            </p>
-          </div>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
+            Grill Profiles & Colours
+          </h3>
         </AnimatedSection>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5">
+          {grillProfiles.map((profile, i) => (
+            <motion.div
+              key={profile.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.05 }}
+              className="bg-brand-card border border-brand-border rounded-2xl p-4 sm:p-5 group hover:border-brand-orange/20 transition-all duration-500"
+            >
+              <div className="text-brand-muted/60 group-hover:text-brand-muted transition-colors w-full aspect-[4/3] mb-3">
+                <svg viewBox="0 0 100 75" className="w-full h-full" fill="none" stroke="currentColor">
+                  <rect x="2" y="2" width="96" height="71" rx="4" strokeWidth="1" strokeOpacity="0.2" />
+                  {profile.decorative ? (
+                    <>
+                      <line x1="50" y1="12" x2="50" y2="63" strokeWidth={profile.width} strokeOpacity="0.18" />
+                      <line x1="46" y1="12" x2="46" y2="63" strokeWidth="1" strokeOpacity="0.55" />
+                      <line x1="54" y1="12" x2="54" y2="63" strokeWidth="1" strokeOpacity="0.55" />
+                    </>
+                  ) : (
+                    <line x1="50" y1="12" x2="50" y2="63" strokeWidth={profile.width} strokeLinecap="round" strokeOpacity="0.45" />
+                  )}
+                </svg>
+              </div>
+              <p className="text-sm font-medium text-center text-brand-text">{profile.name}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 mt-5">
+          {grillColours.length > 0 ? grillColours.map((colour) => (
+            <div key={colour.name} className="bg-brand-card border border-brand-border rounded-2xl p-4 sm:p-5 group hover:border-brand-orange/20 transition-all duration-500">
+              <div className="w-full aspect-[4/3] mb-3 flex items-center justify-center">
+                <span className="w-12 h-12 rounded-lg border border-brand-border" style={{ backgroundColor: colour.value }} />
+              </div>
+              <p className="text-sm font-medium text-center text-brand-text">{colour.name}</p>
+            </div>
+          )) : (
+            <div className="bg-brand-card border border-brand-border rounded-2xl p-4 sm:p-5">
+              <div className="text-brand-muted/60 w-full aspect-[4/3] mb-3 flex items-center justify-center">
+                <svg viewBox="0 0 100 75" className="w-full h-full" fill="none" stroke="currentColor">
+                  <rect x="28" y="15" width="44" height="44" rx="4" strokeWidth="1" strokeOpacity="0.3" strokeDasharray="4 4" />
+                </svg>
+              </div>
+              <p className="text-sm font-medium text-center text-brand-text">Colours to be confirmed</p>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

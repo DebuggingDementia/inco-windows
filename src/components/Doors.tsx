@@ -11,7 +11,7 @@ export default function Doors() {
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-border bg-brand-card/50 mb-6">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-orange" />
                 <span className="text-xs font-medium tracking-widest uppercase text-brand-muted">
-                  Coming Soon
+                  Exterior Doors
                 </span>
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -23,10 +23,10 @@ export default function Doors() {
                 us to learn more about our door options.
               </p>
               <a
-                href="#quote"
+                href="/doors"
                 className="inline-flex items-center gap-2 text-brand-orange hover:text-brand-orange-hover font-medium transition-colors"
               >
-                Inquire About Doors
+                Explore All Doors
                 <ArrowRight size={16} />
               </a>
             </div>

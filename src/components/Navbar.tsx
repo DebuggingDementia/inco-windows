@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone, ArrowRight, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { windowMenu } from '@/data/windowProducts';
+import { doorMenu } from '@/data/doorProducts';
 
 const navLinks = [
   { label: 'Windows', href: '/#windows' },
@@ -62,6 +63,13 @@ export default function Navbar() {
                         <div>{windowMenu.slice(9).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              ) : link.label === 'Doors' ? (
+                <div key={link.label} className="relative group/doors">
+                  <a href="/doors" className="relative px-4 py-2 text-sm font-medium text-[#AAA7A2] hover:text-white flex items-center gap-1">Doors <ChevronDown size={14}/></a>
+                  <div className="invisible opacity-0 group-hover/doors:visible group-hover/doors:opacity-100 absolute top-full left-0 pt-3 transition-all">
+                    <div className="w-64 bg-brand-card border border-brand-border rounded-2xl p-2 shadow-2xl">{doorMenu.map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg">{label}</a>)}</div>
                   </div>
                 </div>
               ) : (
@@ -130,8 +138,10 @@ export default function Navbar() {
               <nav className="flex flex-col gap-1">
                 <p className="text-xs uppercase tracking-widest text-brand-orange mt-1">Windows</p>
                 <div className="max-h-[42vh] overflow-y-auto border-b border-brand-border pb-3">{windowMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm text-brand-muted">{label}</a>)}</div>
+                <p className="text-xs uppercase tracking-widest text-brand-orange mt-3">Doors</p>
+                <div className="border-b border-brand-border pb-3">{doorMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm text-brand-muted">{label}</a>)}</div>
                 {navLinks.map((link, i) => (
-                  link.label === 'Windows' ? null :
+                  link.label === 'Windows' || link.label === 'Doors' ? null :
                   <motion.a
                     key={link.label}
                     href={link.href}
