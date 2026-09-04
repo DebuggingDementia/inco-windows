@@ -6,13 +6,14 @@ interface Env {
 
 export default {
   async fetch(request: Request, env: Env) {
-    const assetResponse = await env.ASSETS.fetch(request);
+    const url = new URL(request.url);
+    const isPageRequest = request.method === 'GET' && !/\.[^/]+$/.test(url.pathname);
 
-    if (assetResponse.status !== 404) {
-      return assetResponse;
+    if (isPageRequest) {
+      const appShellUrl = new URL('/', request.url);
+      return env.ASSETS.fetch(new Request(appShellUrl, request));
     }
 
-    const indexUrl = new URL('/index.html', request.url);
-    return env.ASSETS.fetch(new Request(indexUrl, request));
+    return env.ASSETS.fetch(request);
   },
 };
