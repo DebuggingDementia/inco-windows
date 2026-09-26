@@ -1,20 +1,20 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { windowColors } from './ColorCollection';
+import { windowColors, type WindowColor } from './ColorCollection';
 
 const DEFAULT_VISIBLE_COUNT = 10;
 
-export default function WindowColorOptions() {
+export default function WindowColorOptions({ title = 'Window Colours', description = 'Explore available colours for your window configuration.', colors = windowColors }: { title?: string; description?: string; colors?: WindowColor[] }) {
   const [expanded, setExpanded] = useState(false);
-  const [selected, setSelected] = useState(windowColors[0].name);
-  const visibleColors = expanded ? windowColors : windowColors.slice(0, DEFAULT_VISIBLE_COUNT);
+  const [selected, setSelected] = useState(colors[0].name);
+  const visibleColors = expanded ? colors : colors.slice(0, DEFAULT_VISIBLE_COUNT);
 
   return (
     <section className="py-16 border-b border-brand-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold">Window Colours</h2>
+        <h2 className="text-3xl font-bold">{title}</h2>
         <p className="text-brand-muted mt-3">
-          Explore available colours for your window configuration.
+          {description}
         </p>
 
         <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-10 gap-3 sm:gap-4 mt-8">
