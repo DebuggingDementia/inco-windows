@@ -4,7 +4,6 @@ import WindowStyles from '@/components/WindowStyles';
 import Doors from '@/components/Doors';
 import QuoteForm from '@/components/QuoteForm';
 import ColorCollection from '@/components/ColorCollection';
-import EnergyEfficiency from '@/components/EnergyEfficiency';
 import VinylBenefits from '@/components/VinylBenefits';
 import WindowGrilleOptions from '@/components/WindowGrilleOptions';
 import WindowGrills from '@/components/WindowGrills';
@@ -35,7 +34,6 @@ export default function App() {
       <Doors />
       <QuoteForm />
       <ColorCollection />
-      <EnergyEfficiency />
       <VinylBenefits />
       <WindowGrills />
       <WindowGrilleOptions />
