@@ -6,8 +6,8 @@ import QuoteForm from '@/components/QuoteForm';
 import ColorCollection from '@/components/ColorCollection';
 import EnergyEfficiency from '@/components/EnergyEfficiency';
 import VinylBenefits from '@/components/VinylBenefits';
+import WindowGrilleOptions from '@/components/WindowGrilleOptions';
 import WindowGrills from '@/components/WindowGrills';
-import GrillStyles from '@/components/GrillStyles';
 import InteriorCasing from '@/components/InteriorCasing';
 import Installation from '@/components/Installation';
 import WhyInco from '@/components/WhyInco';
@@ -38,7 +38,7 @@ export default function App() {
       <EnergyEfficiency />
       <VinylBenefits />
       <WindowGrills />
-      <GrillStyles />
+      <WindowGrilleOptions />
       <InteriorCasing />
       <Installation />
       <WhyInco />

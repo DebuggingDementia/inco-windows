@@ -23,10 +23,7 @@ export default function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-brand-orange rounded-lg flex items-center justify-center text-white font-bold text-sm">
-                IN
-              </div>
-              <span className="text-lg font-semibold text-brand-text">INCO</span>
+              <img src="/images/INCO-Windows-and-Doors-faithful(1).svg" alt="INCO Windows & Doors" className="h-16 w-auto object-contain" />
             </a>
             <p className="text-sm text-brand-muted leading-relaxed max-w-xs mb-6">
               Premium Canadian-made windows and doors designed for Alberta's demanding

@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronRight, ExternalLink, Star } from 'lucide-react';
+import { ArrowRight, ChevronRight, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const trustItems = [
@@ -13,8 +13,8 @@ const trustItems = [
       </svg>
     ),
   },
-  { name: 'HomeStars', icon: <div className="w-6 h-6 bg-[#00A651] rounded-md flex items-center justify-center"><Star size={12} className="text-white fill-white" /></div> },
-  { name: 'Energy Star', icon: <div className="w-6 h-6 bg-[#0073B7] rounded-md flex items-center justify-center"><Star size={12} className="text-white fill-white" /></div> },
+  { name: 'HomeStars', icon: <img src="/images/HomeStars-logo-vector.svg" alt="" className="w-14 h-8 object-contain" /> },
+  { name: 'Energy Star', icon: <img src="/images/Energy-Star-logo-vector.svg" alt="" className="w-14 h-8 object-contain" /> },
 ];
 
 export default function Hero() {
@@ -22,7 +22,22 @@ export default function Hero() {
     <section className="relative min-h-[100svh] flex items-center overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-brand-bg to-brand-surface" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 w-full">
+      <motion.div
+        initial={{ opacity: 0, scale: 0.98 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="pointer-events-none absolute inset-0 hidden lg:block"
+        aria-hidden="true"
+      >
+        <img
+          src="/images/hero/Background gradient main page.png"
+          alt=""
+          className="absolute inset-0 h-full w-full object-contain object-right"
+        />
+        <div className="absolute inset-y-0 left-0 w-[62%] bg-gradient-to-r from-brand-bg via-brand-bg/90 to-transparent" />
+      </motion.div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -97,19 +112,13 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative hidden lg:block"
+            className="relative lg:hidden"
           >
-            <div className="absolute inset-0 -m-16">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-brand-orange/5 blur-[100px]" />
-            </div>
-
-            <div className="relative rounded-3xl overflow-hidden border border-brand-border w-[90%] mx-auto">
-              <img
-                src="/images/hero/3ac9455c-beca-49eb-9f9e-378658fcbfba.png"
-                alt="INCO premium vinyl windows installed in a Canadian home"
-                className="w-full h-auto object-contain"
-              />
-            </div>
+            <img
+              src="/images/hero/Background gradient main page.png"
+              alt="INCO premium vinyl windows installed in a Canadian home"
+              className="w-full h-auto object-contain"
+            />
           </motion.div>
         </div>
       </div>

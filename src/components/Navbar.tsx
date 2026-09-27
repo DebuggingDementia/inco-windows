@@ -7,9 +7,11 @@ import { doorMenu } from '@/data/doorProducts';
 const navLinks = [
   { label: 'Windows', href: '/#windows' },
   { label: 'Doors', href: '/#doors' },
-  { label: 'Services', href: '/#installation' },
+  { label: 'Glass & Energy Performance', href: '/windows/glass-energy' },
   { label: 'Warranty Info', href: '/warranty' },
 ];
+
+const windowNavMenu = windowMenu.filter(([label]) => label !== 'Glass & Energy Performance');
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,9 +45,9 @@ export default function Navbar() {
             {/* Logo */}
             <a href="/" className="flex-shrink-0">
               <img
-                src="/inco-logo.svg"
+                src="/images/INCO-Windows-and-Doors-faithful(1).svg"
                 alt="INCO Windows & Doors"
-                className="h-9 sm:h-11"
+                className="h-14 sm:h-16 w-auto object-contain"
               />
             </a>
 
@@ -56,11 +58,10 @@ export default function Navbar() {
                   <a href="/windows" className="relative px-4 py-2 text-sm font-medium text-[#AAA7A2] hover:text-white flex items-center gap-1">Windows <ChevronDown size={14}/></a>
                   <div className="invisible opacity-0 group-hover/nav:visible group-hover/nav:opacity-100 absolute top-full left-0 pt-3 transition-all">
                     <div className="w-[720px] max-w-[calc(100vw-2rem)] bg-brand-card border border-brand-border rounded-2xl p-3 shadow-2xl">
-                      <a href={windowMenu[0][1]} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg">{windowMenu[0][0]}</a>
-                      <a href={windowMenu[1][1]} className="block px-4 py-2 mb-2 text-sm font-medium text-brand-orange bg-brand-orange/10 hover:bg-brand-orange/15 rounded-lg">{windowMenu[1][0]}</a>
+                      <a href={windowNavMenu[0][1]} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg">{windowNavMenu[0][0]}</a>
                       <div className="grid grid-cols-2 gap-x-4 border-t border-brand-border pt-2">
-                        <div>{windowMenu.slice(2, 9).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
-                        <div>{windowMenu.slice(9).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
+                        <div>{windowNavMenu.slice(1, 8).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
+                        <div>{windowNavMenu.slice(8).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
                       </div>
                     </div>
                   </div>
@@ -121,9 +122,9 @@ export default function Navbar() {
               <div className="flex items-center justify-between mb-12">
                 <a href="/" className="flex-shrink-0">
                   <img
-                    src="/inco-logo.svg"
+                    src="/images/INCO-Windows-and-Doors-faithful(1).svg"
                     alt="INCO Windows & Doors"
-                    className="h-9"
+                    className="h-14 w-auto object-contain"
                   />
                 </a>
                 <button
@@ -137,7 +138,7 @@ export default function Navbar() {
 
               <nav className="flex flex-col gap-1">
                 <p className="text-xs uppercase tracking-widest text-brand-orange mt-1">Windows</p>
-                <div className="max-h-[42vh] overflow-y-auto border-b border-brand-border pb-3">{windowMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm text-brand-muted">{label}</a>)}</div>
+                <div className="max-h-[42vh] overflow-y-auto border-b border-brand-border pb-3">{windowNavMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm text-brand-muted">{label}</a>)}</div>
                 <p className="text-xs uppercase tracking-widest text-brand-orange mt-3">Doors</p>
                 <div className="border-b border-brand-border pb-3">{doorMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm text-brand-muted">{label}</a>)}</div>
                 {navLinks.map((link, i) => (
