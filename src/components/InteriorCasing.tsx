@@ -8,6 +8,10 @@ interface CasingOption {
 
 const vinylOptions: CasingOption[] = [
   {
+    name: 'Casing Profile',
+    image: '/images/window-styles/2026-08-15_22.41.17.jpg',
+  },
+  {
     name: 'Colonial Rosettes',
     image: '/images/interior-casing/2026-08-15_22.42.20.jpg',
   },
@@ -19,6 +23,10 @@ const vinylOptions: CasingOption[] = [
 
 const mdfOptions: CasingOption[] = [
   {
+    name: 'Casing Profile',
+    image: '/images/window-styles/2026-08-15_22.41.44.jpg',
+  },
+  {
     name: 'Colonial 45-degree',
     image: '/images/interior-casing/2026-08-15_22.43.15.jpg',
   },
@@ -29,15 +37,16 @@ const mdfOptions: CasingOption[] = [
 ];
 
 function CasingCard({ option, index }: { option: CasingOption; index: number }) {
+  const featured = index === 0;
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="bg-brand-card border border-brand-border rounded-2xl p-5 group hover:border-brand-orange/15 transition-all duration-500"
+      className={`${featured ? 'col-span-2' : ''} min-w-0 bg-brand-card border border-brand-border rounded-2xl p-5 group hover:border-brand-orange/15 transition-all duration-500`}
     >
-      <div className="aspect-[3/4] mb-4 rounded-xl overflow-hidden bg-white/5">
+      <div className={`${featured ? 'aspect-[16/10]' : 'aspect-[4/3]'} mb-4 rounded-xl overflow-hidden bg-white/5`}>
         <img
           src={option.image}
           alt={option.name}
@@ -47,6 +56,24 @@ function CasingCard({ option, index }: { option: CasingOption; index: number }) 
       </div>
       <p className="text-sm font-medium text-center text-brand-text">{option.name}</p>
     </motion.div>
+  );
+}
+
+function MaterialGroup({ name, options }: { name: string; options: CasingOption[] }) {
+  return (
+    <div className="min-w-0">
+      <AnimatedSection>
+        <h3 className="text-lg font-semibold mb-5 flex items-center gap-3">
+          <span className="w-8 h-px bg-brand-orange" />
+          {name}
+        </h3>
+      </AnimatedSection>
+      <div className="grid grid-cols-2 gap-4">
+        {options.map((option, index) => (
+          <CasingCard key={option.image} option={option} index={index} />
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -67,33 +94,8 @@ export default function InteriorCasing() {
         </AnimatedSection>
 
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          <div>
-            <AnimatedSection>
-              <h3 className="text-lg font-semibold mb-5 flex items-center gap-3">
-                <span className="w-8 h-px bg-brand-orange" />
-                Vinyl
-              </h3>
-            </AnimatedSection>
-            <div className="grid grid-cols-2 gap-4">
-              {vinylOptions.map((opt, i) => (
-                <CasingCard key={opt.name} option={opt} index={i} />
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <AnimatedSection>
-              <h3 className="text-lg font-semibold mb-5 flex items-center gap-3">
-                <span className="w-8 h-px bg-brand-orange" />
-                MDF
-              </h3>
-            </AnimatedSection>
-            <div className="grid grid-cols-2 gap-4">
-              {mdfOptions.map((opt, i) => (
-                <CasingCard key={`mdf-${opt.name}`} option={opt} index={i} />
-              ))}
-            </div>
-          </div>
+          <MaterialGroup name="Vinyl" options={vinylOptions} />
+          <MaterialGroup name="MDF" options={mdfOptions} />
         </div>
       </div>
     </section>
