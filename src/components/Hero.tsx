@@ -23,6 +23,20 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-brand-bg to-brand-surface" />
 
       <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
+        className="pointer-events-none absolute inset-0 lg:hidden"
+      >
+        <img
+          src="/images/hero/Background gradient main page.png"
+          alt="INCO premium vinyl windows installed in a Canadian home"
+          className="absolute bottom-0 right-[-12%] w-[150%] max-w-none h-auto object-contain sm:right-0 sm:w-[110%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg via-brand-bg/80 to-brand-bg/40" />
+      </motion.div>
+
+      <motion.div
         initial={{ opacity: 0, scale: 0.98 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -108,18 +122,6 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative lg:hidden"
-          >
-            <img
-              src="/images/hero/Background gradient main page.png"
-              alt="INCO premium vinyl windows installed in a Canadian home"
-              className="w-full h-auto object-contain"
-            />
-          </motion.div>
         </div>
       </div>
     </section>

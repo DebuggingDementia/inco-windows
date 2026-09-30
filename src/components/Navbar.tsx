@@ -55,29 +55,29 @@ export default function Navbar() {
             <nav className="hidden lg:flex items-center ml-12 gap-1">
               {navLinks.map((link) => link.label === 'Windows' ? (
                 <div key={link.label} className="relative group/nav">
-                  <a href="/windows" className="relative px-4 py-2 text-sm font-medium text-[#AAA7A2] hover:text-white flex items-center gap-1">Windows <ChevronDown size={14}/></a>
+                  <a href="/windows" className="relative px-4 py-2 text-sm font-medium text-[#DADADA] hover:text-white flex items-center gap-1">Windows <ChevronDown size={14}/></a>
                   <div className="invisible opacity-0 group-hover/nav:visible group-hover/nav:opacity-100 absolute top-full left-0 pt-3 transition-all">
                     <div className="w-[720px] max-w-[calc(100vw-2rem)] bg-brand-card border border-brand-border rounded-2xl p-3 shadow-2xl">
-                      <a href={windowNavMenu[0][1]} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg">{windowNavMenu[0][0]}</a>
+                      <a href={windowNavMenu[0][1]} className="block px-4 py-2 text-sm font-medium text-[#DADADA] hover:text-white hover:bg-white/5 rounded-lg">{windowNavMenu[0][0]}</a>
                       <div className="grid grid-cols-2 gap-x-4 border-t border-brand-border pt-2">
-                        <div>{windowNavMenu.slice(1, 8).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
-                        <div>{windowNavMenu.slice(8).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
+                        <div>{windowNavMenu.slice(1, 8).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm font-medium text-[#DADADA] hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
+                        <div>{windowNavMenu.slice(8).map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm font-medium text-[#DADADA] hover:text-white hover:bg-white/5 rounded-lg whitespace-nowrap">{label}</a>)}</div>
                       </div>
                     </div>
                   </div>
                 </div>
               ) : link.label === 'Doors' ? (
                 <div key={link.label} className="relative group/doors">
-                  <a href="/doors" className="relative px-4 py-2 text-sm font-medium text-[#AAA7A2] hover:text-white flex items-center gap-1">Doors <ChevronDown size={14}/></a>
+                  <a href="/doors" className="relative px-4 py-2 text-sm font-medium text-[#DADADA] hover:text-white flex items-center gap-1">Doors <ChevronDown size={14}/></a>
                   <div className="invisible opacity-0 group-hover/doors:visible group-hover/doors:opacity-100 absolute top-full left-0 pt-3 transition-all">
-                    <div className="w-64 bg-brand-card border border-brand-border rounded-2xl p-2 shadow-2xl">{doorMenu.map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm text-brand-muted hover:text-white hover:bg-white/5 rounded-lg">{label}</a>)}</div>
+                    <div className="w-64 bg-brand-card border border-brand-border rounded-2xl p-2 shadow-2xl">{doorMenu.map(([label,href])=><a key={href} href={href} className="block px-4 py-2 text-sm font-medium text-[#DADADA] hover:text-white hover:bg-white/5 rounded-lg">{label}</a>)}</div>
                   </div>
                 </div>
               ) : (
                 <a
                   key={link.label}
                   href={link.href}
-                  className="relative px-4 py-2 text-sm font-medium text-[#AAA7A2] hover:text-white transition-colors duration-300 group"
+                  className="relative px-4 py-2 text-sm font-medium text-[#DADADA] hover:text-white transition-colors duration-300 group"
                 >
                   {link.label}
                   <span className="absolute bottom-0 left-4 right-4 h-[2px] rounded-full bg-brand-orange scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
@@ -138,9 +138,9 @@ export default function Navbar() {
 
               <nav className="flex flex-col gap-1">
                 <p className="text-xs uppercase tracking-widest text-brand-orange mt-1">Windows</p>
-                <div className="max-h-[42vh] overflow-y-auto border-b border-brand-border pb-3">{windowNavMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm text-brand-muted">{label}</a>)}</div>
+                <div className="max-h-[42vh] overflow-y-auto border-b border-brand-border pb-3">{windowNavMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm font-medium text-[#DADADA]">{label}</a>)}</div>
                 <p className="text-xs uppercase tracking-widest text-brand-orange mt-3">Doors</p>
-                <div className="border-b border-brand-border pb-3">{doorMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm text-brand-muted">{label}</a>)}</div>
+                <div className="border-b border-brand-border pb-3">{doorMenu.map(([label,href])=><a key={href} href={href} onClick={()=>setMobileOpen(false)} className="block py-1.5 text-sm font-medium text-[#DADADA]">{label}</a>)}</div>
                 {navLinks.map((link, i) => (
                   link.label === 'Windows' || link.label === 'Doors' ? null :
                   <motion.a

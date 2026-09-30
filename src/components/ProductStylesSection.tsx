@@ -4,13 +4,13 @@ import AnimatedSection from './AnimatedSection';
 
 type Style = { name: string; href: string; desc: string; image?: string };
 
-export default function ProductStylesSection({ id, label, description, styles }: { id: string; label: string; description: string; styles: Style[] }) {
-  return <section id={id} className="py-20 sm:py-28 bg-brand-bg">
+export default function ProductStylesSection({ id, label, description, styles, stoneBackground = false }: { id: string; label: string; description: string; styles: Style[]; stoneBackground?: boolean }) {
+  return <section id={id} className={`py-20 sm:py-28 ${stoneBackground ? 'bg-[#EAE8E4]' : 'bg-brand-bg'}`}>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <AnimatedSection>
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">{label} Styles & <span className="text-brand-orange">Types</span></h2>
-          <p className="text-brand-muted leading-relaxed">{description}</p>
+          <h2 className={`text-3xl sm:text-4xl font-bold mb-4 ${stoneBackground ? 'text-brand-bg' : ''}`}>{label} Styles & <span className={stoneBackground ? 'text-[#A95129]' : 'text-brand-orange'}>Types</span></h2>
+          <p className={`${stoneBackground ? 'text-brand-card/80' : 'text-brand-muted'} leading-relaxed`}>{description}</p>
         </div>
       </AnimatedSection>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">

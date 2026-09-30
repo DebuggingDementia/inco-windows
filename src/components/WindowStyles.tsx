@@ -29,7 +29,7 @@ const windowTypes = [
     name: 'Shaped Windows',
     href: '/windows/architectural-specialty-shape',
     desc: 'Custom windows available in arches, circles, triangles and other geometric configurations.',
-    image: '/images/window-styles/2026-08-15_22.41.30.jpg',
+    image: '/images/window-products/Sahpe Window (Mix).png',
   },
   {
     name: 'Bay & Bow Windows',

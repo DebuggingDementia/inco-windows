@@ -9,5 +9,5 @@ const doorTypes = doorProducts.map(product => ({
 }));
 
 export default function Doors() {
-  return <ProductStylesSection id="doors" label="Door" description="Explore exterior door styles designed around how Canadian homeowners enter, connect, and live." styles={doorTypes} />;
+  return <ProductStylesSection id="doors" label="Door" description="Explore exterior door styles designed around how Canadian homeowners enter, connect, and live." styles={doorTypes} stoneBackground />;
 }

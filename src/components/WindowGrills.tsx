@@ -10,7 +10,7 @@ export default function WindowGrills() {
           <AnimatedSection>
             <div className="relative bg-brand-card border border-brand-border rounded-3xl overflow-hidden aspect-[4/3]">
               <img
-                src="/images/grills/gr.jpeg"
+                src="/images/grills/Window grills Background Removed.png"
                 alt="Decorative window grill patterns"
                 className="w-full h-full object-contain"
                 loading="lazy"
