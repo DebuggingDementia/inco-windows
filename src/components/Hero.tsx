@@ -1,4 +1,4 @@
-import { ArrowRight, ChevronRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const trustItems = [
@@ -14,7 +14,7 @@ const trustItems = [
     ),
   },
   { name: 'HomeStars', icon: <img src="/images/HomeStars-logo-vector.svg" alt="" className="w-14 h-8 object-contain" /> },
-  { name: 'Energy Star', icon: <img src="/images/Energy-Star-logo-vector.svg" alt="" className="w-14 h-8 object-contain" /> },
+  { name: 'Energy Star', icon: <img src="/images/energystar.png" alt="" className="w-16 h-10 object-contain" /> },
 ];
 
 export default function Hero() {
@@ -111,11 +111,10 @@ export default function Hero() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mt-5">
               {trustItems.map((item) => (
-                <div key={item.name} className="min-w-0 flex items-center gap-3 px-3 py-3 bg-brand-card/50 border border-brand-border rounded-xl hover:border-brand-orange/15 transition-colors">
+                <div key={item.name} className="min-w-0 flex items-center gap-3 px-3 py-3 bg-brand-card/50 border border-brand-border rounded-xl">
                   <div className="shrink-0">{item.icon}</div>
                   <div className="min-w-0">
                     <p className="text-xs font-medium text-brand-text truncate">{item.name}</p>
-                    <span className="flex items-center gap-1 text-[11px] text-brand-muted"><span>View Profile</span><ExternalLink size={10} /></span>
                   </div>
                 </div>
               ))}
