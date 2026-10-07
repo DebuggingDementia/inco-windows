@@ -8,9 +8,9 @@ const footerLinks = {
     { label: 'Warranty Info', href: '/warranty' },
   ],
   Contact: [
-    { label: '(403) 123-4567', href: 'tel:+14031234567' },
-    { label: 'info@incowindows.ca', href: 'mailto:info@incowindows.ca' },
-    { label: 'Calgary, Alberta', href: '#' },
+   { label: '(403)-617-3082', href: 'tel:+4036173082' },
+   { label: 'office@incowindows.ca', href: 'mailto:office@incowindows.ca' },
+   { label: 'Calgary, Alberta', href: '#' },
   ],
 };
 
