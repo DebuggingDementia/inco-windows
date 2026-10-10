@@ -32,7 +32,7 @@ export default function App() {
       {isWarrantyPage ? <Warranty /> : path === '/windows' ? <AllWindowsPage /> : path === '/windows/glass-energy' ? <GlassEnergyPage /> : product ? <WindowProductPage product={product} /> : path === '/doors' ? <AllDoorsPage /> : doorProduct ? <DoorProductPage product={doorProduct} /> : <><Hero />
       <WindowStyles />
       <Doors />
-      <QuoteForm />
+      {/*<QuoteForm />*/}
       <ColorCollection />
       <VinylBenefits />
       <WindowGrills />
