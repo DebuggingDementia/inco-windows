@@ -1,0 +1,1105 @@
+[
+{
+  "model": "catalog.category",
+  "pk": 1,
+  "fields": {
+    "name": "Windows",
+    "slug": "windows",
+    "product_type": "window",
+    "order": 1,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.category",
+  "pk": 2,
+  "fields": {
+    "name": "Doors",
+    "slug": "doors",
+    "product_type": "door",
+    "order": 2,
+    "is_active": true
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "title": "Casement Windows",
+    "slug": "casement",
+    "short_description": "Side-hinged windows that open outward with a crank for controlled ventilation.",
+    "description": "A casement window swings outward from one side. Its full opening is useful where generous airflow and a clear view are priorities.1",
+    "hero_image": "catalog/products/Casement_Window_.png",
+    "order": 1,
+    "is_published": true,
+    "created_at": "2026-10-17T21:49:52.630Z",
+    "updated_at": "2026-10-17T23:13:09.651Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "title": "Awning Windows",
+    "slug": "awning",
+    "short_description": "Top-hinged windows that open outward from the bottom.",
+    "description": "An awning window creates a sheltered opening that can support ventilation while helping keep light rain outside. It suits spaces where a compact horizontal opening is useful.",
+    "hero_image": "catalog/products/Awning_Window.png",
+    "order": 2,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.429Z",
+    "updated_at": "2026-10-17T22:27:21.431Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "title": "Fixed / Picture Windows",
+    "slug": "fixed-picture",
+    "short_description": "Non-opening windows designed around daylight and uninterrupted views.",
+    "description": "A fixed or picture window has no operating sash. It is commonly used where natural light, a broad view, or a clean architectural composition matters more than ventilation.",
+    "hero_image": "catalog/products/Picture_Window_1.png",
+    "order": 4,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.438Z",
+    "updated_at": "2026-10-17T22:27:21.439Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 5,
+  "fields": {
+    "category": 1,
+    "title": "Single Hung Windows",
+    "slug": "single-hung",
+    "short_description": "A classic vertical window with one operating sash.",
+    "description": "A single hung window opens vertically through one movable sash while the other remains fixed. It offers familiar operation in a space-conscious format.",
+    "hero_image": "catalog/products/Single_Hung.png",
+    "order": 5,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.443Z",
+    "updated_at": "2026-10-17T22:27:21.445Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 6,
+  "fields": {
+    "category": 1,
+    "title": "Double Hung Windows",
+    "slug": "double-hung",
+    "short_description": "A vertical window with two operating sashes for flexible airflow.",
+    "description": "Both sashes in a double hung window can move, allowing ventilation to be adjusted from the upper or lower portion of the opening.",
+    "hero_image": "catalog/products/Double_Hung.png",
+    "order": 6,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.450Z",
+    "updated_at": "2026-10-17T22:27:21.452Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 7,
+  "fields": {
+    "category": 1,
+    "title": "Single Slider Windows",
+    "slug": "single-slider",
+    "short_description": "A horizontal window with one sliding sash and one fixed sash.",
+    "description": "A single slider opens side to side along its frame. It is useful for wide openings and locations where an outward-swinging sash is not desirable.",
+    "hero_image": "catalog/products/Single_Slider.png",
+    "order": 7,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.456Z",
+    "updated_at": "2026-10-17T22:27:21.458Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 8,
+  "fields": {
+    "category": 1,
+    "title": "Double Slider Windows",
+    "slug": "double-slider",
+    "short_description": "A horizontal window with two sliding sashes.",
+    "description": "A double slider allows both sashes to move horizontally, offering more flexible access and ventilation than a single slider.",
+    "hero_image": "catalog/products/Double_Slider_.png",
+    "order": 8,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.461Z",
+    "updated_at": "2026-10-17T22:27:21.463Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 10,
+  "fields": {
+    "category": 1,
+    "title": "Bay Windows",
+    "slug": "bay",
+    "short_description": "An angular projection that extends beyond the exterior wall.",
+    "description": "A bay window combines multiple window sections to project outward from the home. Its angled form can create a deeper interior ledge and expanded sightlines.",
+    "hero_image": "catalog/products/Bay_Window.png",
+    "order": 10,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.470Z",
+    "updated_at": "2026-10-17T22:27:21.471Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 11,
+  "fields": {
+    "category": 1,
+    "title": "Bow Windows",
+    "slug": "bow",
+    "short_description": "A gently curved projection composed of multiple window sections.",
+    "description": "A bow window uses several sections to create a rounded projection. The softer curve brings in light from multiple directions and creates panoramic views.",
+    "hero_image": "catalog/products/Bow_Window.png",
+    "order": 11,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.473Z",
+    "updated_at": "2026-10-17T22:27:21.476Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 12,
+  "fields": {
+    "category": 1,
+    "title": "Tilt & Turn Windows",
+    "slug": "tilt-turn",
+    "short_description": "Dual-operation windows that tilt inward or swing inward from the side.",
+    "description": "A tilt and turn window supports two opening modes: a top tilt for controlled ventilation and an inward side swing for a wider opening.",
+    "hero_image": "catalog/products/Turn_and_Tilt_1.png",
+    "order": 12,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.478Z",
+    "updated_at": "2026-10-17T22:27:21.480Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 13,
+  "fields": {
+    "category": 1,
+    "title": "Architectural / Specialty Shape Windows",
+    "slug": "architectural-specialty-shape",
+    "short_description": "Custom geometric windows for distinctive architectural openings.",
+    "description": "Specialty shape windows may follow arches, circles, triangles, or other geometric forms. They add light and visual character where a standard rectangle is not the right fit.",
+    "hero_image": "catalog/products/Sahpe_Window_Mix.png",
+    "order": 13,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.484Z",
+    "updated_at": "2026-10-17T22:27:21.487Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 15,
+  "fields": {
+    "category": 2,
+    "title": "Steel Entry Doors",
+    "slug": "steel-entry",
+    "short_description": "A hinged exterior entrance door built around a steel-faced door system.",
+    "description": "Steel entry doors are commonly used at primary and secondary home entrances where dependable everyday access is required.",
+    "hero_image": "catalog/products/Steel_Door_3_Background_Removed.png",
+    "order": 1,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.498Z",
+    "updated_at": "2026-10-17T22:27:21.500Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 16,
+  "fields": {
+    "category": 2,
+    "title": "Fiberglass Entry Doors",
+    "slug": "fiberglass-entry",
+    "short_description": "A hinged exterior entrance door with a fiberglass-facing system.",
+    "description": "Fiberglass entry doors provide a versatile entrance option for homeowners seeking durability and design flexibility with straightforward upkeep.",
+    "hero_image": "catalog/products/FB_Glass_2_Background_Removed.png",
+    "order": 2,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.509Z",
+    "updated_at": "2026-10-17T22:27:21.512Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 17,
+  "fields": {
+    "category": 2,
+    "title": "Sliding Patio Doors",
+    "slug": "sliding-patio",
+    "short_description": "Large glazed door panels that open horizontally along a track.",
+    "description": "Sliding patio doors connect indoor living areas with decks, patios, and backyards while avoiding the floor-space requirements of a swinging door.",
+    "hero_image": "catalog/products/Sliding_door_1_Background_Removed.png",
+    "order": 3,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.520Z",
+    "updated_at": "2026-10-17T22:27:21.523Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 18,
+  "fields": {
+    "category": 2,
+    "title": "Garden Doors",
+    "slug": "garden",
+    "short_description": "Hinged glazed exterior doors for direct access to outdoor living spaces.",
+    "description": "Garden doors use swinging panels to connect a room with a garden, patio, or deck while bringing natural light into the interior.",
+    "hero_image": "catalog/products/Garden_Door_1_Background_Removed.png",
+    "order": 4,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.528Z",
+    "updated_at": "2026-10-17T22:27:21.530Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 19,
+  "fields": {
+    "category": 2,
+    "title": "Double Doors",
+    "slug": "double",
+    "short_description": "A paired hinged-door configuration that creates a wider entrance.",
+    "description": "Double doors use two coordinated panels to create a broad opening. They are commonly selected for prominent entrances or spaces needing wider access.",
+    "hero_image": "catalog/products/DOUBLE_DOOR_1_Background_Removed.png",
+    "order": 5,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.542Z",
+    "updated_at": "2026-10-17T22:27:21.545Z"
+  }
+},
+{
+  "model": "catalog.product",
+  "pk": 20,
+  "fields": {
+    "category": 2,
+    "title": "Vented Doors",
+    "slug": "vented",
+    "short_description": "An exterior door configuration designed to support controlled ventilation.",
+    "description": "Vented doors incorporate an operable ventilation feature while maintaining the function of an exterior entrance. Final configurations depend on the selected product.",
+    "hero_image": "catalog/products/VENTED_DOOR_1_Background_Removed.png",
+    "order": 6,
+    "is_published": true,
+    "created_at": "2026-10-17T22:27:21.554Z",
+    "updated_at": "2026-10-17T22:27:21.556Z"
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "image": "catalog/gallery/Casments_Window_Mix_Size.png",
+    "alt_text": "Casement Windows photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "image": "catalog/gallery/Awning_Windows_Mix_Size.png",
+    "alt_text": "Awning Windows photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 5,
+  "fields": {
+    "product": 4,
+    "image": "catalog/gallery/Picture_Window.png",
+    "alt_text": "Fixed / Picture Windows photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 6,
+  "fields": {
+    "product": 5,
+    "image": "catalog/gallery/Single_Hung_Mix_Size.png",
+    "alt_text": "Single Hung Windows photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 7,
+  "fields": {
+    "product": 6,
+    "image": "catalog/gallery/Double_Hung_Mix_Size.png",
+    "alt_text": "Double Hung Windows photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 8,
+  "fields": {
+    "product": 7,
+    "image": "catalog/gallery/Single_Slider_Mix_Size.png",
+    "alt_text": "Single Slider Windows photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 9,
+  "fields": {
+    "product": 8,
+    "image": "catalog/gallery/Double_Slider__Mix_Size.png",
+    "alt_text": "Double Slider Windows photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 10,
+  "fields": {
+    "product": 12,
+    "image": "catalog/gallery/Tilt_and_Turn_2.png",
+    "alt_text": "Tilt & Turn Windows photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 11,
+  "fields": {
+    "product": 13,
+    "image": "catalog/gallery/shape_window_1.png",
+    "alt_text": "Architectural / Specialty Shape Windows photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 12,
+  "fields": {
+    "product": 13,
+    "image": "catalog/gallery/shape_window_2.png",
+    "alt_text": "Architectural / Specialty Shape Windows photo 2",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 13,
+  "fields": {
+    "product": 13,
+    "image": "catalog/gallery/Shape_window_3.png",
+    "alt_text": "Architectural / Specialty Shape Windows photo 3",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 14,
+  "fields": {
+    "product": 15,
+    "image": "catalog/gallery/Steel_Door_1_Background_Removed.png",
+    "alt_text": "Steel Entry Doors photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 15,
+  "fields": {
+    "product": 15,
+    "image": "catalog/gallery/Steel_Door_2_Background_Removed.png",
+    "alt_text": "Steel Entry Doors photo 2",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 16,
+  "fields": {
+    "product": 15,
+    "image": "catalog/gallery/Steel_Door_4_Background_Removed.png",
+    "alt_text": "Steel Entry Doors photo 3",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 17,
+  "fields": {
+    "product": 16,
+    "image": "catalog/gallery/FB_Glass_1_Background_Removed.png",
+    "alt_text": "Fiberglass Entry Doors photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 18,
+  "fields": {
+    "product": 16,
+    "image": "catalog/gallery/FB_Glass_3_Background_Removed.png",
+    "alt_text": "Fiberglass Entry Doors photo 2",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 19,
+  "fields": {
+    "product": 17,
+    "image": "catalog/gallery/Slididng_door_Background_Removed.png",
+    "alt_text": "Sliding Patio Doors photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 20,
+  "fields": {
+    "product": 18,
+    "image": "catalog/gallery/Garden_Door_2_Background_Removed.png",
+    "alt_text": "Garden Doors photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 21,
+  "fields": {
+    "product": 18,
+    "image": "catalog/gallery/Garden_Door_3_Background_Removed.png",
+    "alt_text": "Garden Doors photo 2",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 22,
+  "fields": {
+    "product": 18,
+    "image": "catalog/gallery/Graden_Door_4_Background_Removed.png",
+    "alt_text": "Garden Doors photo 3",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 23,
+  "fields": {
+    "product": 19,
+    "image": "catalog/gallery/DOUBLE_DOOR_2_Background_Removed.png",
+    "alt_text": "Double Doors photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 24,
+  "fields": {
+    "product": 19,
+    "image": "catalog/gallery/DOUBLE_DOOR_3_Background_Removed.png",
+    "alt_text": "Double Doors photo 2",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productimage",
+  "pk": 25,
+  "fields": {
+    "product": 20,
+    "image": "catalog/gallery/Vanted_door_2_Background_Removed.png",
+    "alt_text": "Vented Doors photo 1",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "text": "Wide ventilation opening",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "text": "Unobstructed outward view",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 4,
+  "fields": {
+    "product": 1,
+    "text": "Simple crank operation",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 5,
+  "fields": {
+    "product": 2,
+    "text": "Ventilation in light rain",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 6,
+  "fields": {
+    "product": 2,
+    "text": "Useful for higher wall positions",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 7,
+  "fields": {
+    "product": 2,
+    "text": "Compact outward operation",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 11,
+  "fields": {
+    "product": 4,
+    "text": "Unobstructed views",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 12,
+  "fields": {
+    "product": 4,
+    "text": "Generous natural light",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 13,
+  "fields": {
+    "product": 4,
+    "text": "Clean architectural profile",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 14,
+  "fields": {
+    "product": 5,
+    "text": "Space-saving vertical operation",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 15,
+  "fields": {
+    "product": 5,
+    "text": "Classic appearance",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 16,
+  "fields": {
+    "product": 5,
+    "text": "Straightforward ventilation",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 17,
+  "fields": {
+    "product": 6,
+    "text": "Flexible upper and lower airflow",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 18,
+  "fields": {
+    "product": 6,
+    "text": "Traditional proportions",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 19,
+  "fields": {
+    "product": 6,
+    "text": "No exterior swing",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 20,
+  "fields": {
+    "product": 7,
+    "text": "Space-saving operation",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 21,
+  "fields": {
+    "product": 7,
+    "text": "Suited to wide openings",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 22,
+  "fields": {
+    "product": 7,
+    "text": "Simple horizontal movement",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 23,
+  "fields": {
+    "product": 8,
+    "text": "Flexible side-to-side airflow",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 24,
+  "fields": {
+    "product": 8,
+    "text": "Two movable sashes",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 25,
+  "fields": {
+    "product": 8,
+    "text": "No exterior projection",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 29,
+  "fields": {
+    "product": 10,
+    "text": "Expanded interior space",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 30,
+  "fields": {
+    "product": 10,
+    "text": "Wider viewing angles",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 31,
+  "fields": {
+    "product": 10,
+    "text": "Strong architectural presence",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 32,
+  "fields": {
+    "product": 11,
+    "text": "Panoramic outlook",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 33,
+  "fields": {
+    "product": 11,
+    "text": "Soft curved appearance",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 34,
+  "fields": {
+    "product": 11,
+    "text": "Light from multiple directions",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 35,
+  "fields": {
+    "product": 12,
+    "text": "Two opening modes",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 36,
+  "fields": {
+    "product": 12,
+    "text": "Controlled ventilation",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 37,
+  "fields": {
+    "product": 12,
+    "text": "Convenient inward access",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 38,
+  "fields": {
+    "product": 13,
+    "text": "Distinctive architectural detail",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 39,
+  "fields": {
+    "product": 13,
+    "text": "Supports geometric openings",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 40,
+  "fields": {
+    "product": 13,
+    "text": "Adds light in custom spaces",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 44,
+  "fields": {
+    "product": 15,
+    "text": "Durable exterior surface",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 45,
+  "fields": {
+    "product": 15,
+    "text": "Entry-focused security",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 46,
+  "fields": {
+    "product": 15,
+    "text": "Flexible design options",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 47,
+  "fields": {
+    "product": 16,
+    "text": "Low-maintenance exterior",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 48,
+  "fields": {
+    "product": 16,
+    "text": "Design flexibility",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 49,
+  "fields": {
+    "product": 16,
+    "text": "Durable everyday entrance",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 50,
+  "fields": {
+    "product": 17,
+    "text": "Space-efficient operation",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 51,
+  "fields": {
+    "product": 17,
+    "text": "Broad glass area and daylight",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 52,
+  "fields": {
+    "product": 17,
+    "text": "Convenient outdoor access",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 53,
+  "fields": {
+    "product": 18,
+    "text": "Traditional hinged access",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 54,
+  "fields": {
+    "product": 18,
+    "text": "Natural light",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 55,
+  "fields": {
+    "product": 18,
+    "text": "Strong indoor-outdoor connection",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 56,
+  "fields": {
+    "product": 19,
+    "text": "Wider clear opening",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 57,
+  "fields": {
+    "product": 19,
+    "text": "Balanced architectural presence",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 58,
+  "fields": {
+    "product": 19,
+    "text": "Flexible entrance planning",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 59,
+  "fields": {
+    "product": 20,
+    "text": "Flexible airflow",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 60,
+  "fields": {
+    "product": 20,
+    "text": "Exterior access and ventilation",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productbenefit",
+  "pk": 61,
+  "fields": {
+    "product": 20,
+    "text": "Product-specific configuration options",
+    "order": 3
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 2,
+  "fields": {
+    "product": 15,
+    "question": "Where are steel entry doors commonly used?",
+    "answer": "They are commonly used at primary and secondary exterior entrances.",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 3,
+  "fields": {
+    "product": 15,
+    "question": "How does a steel entry door operate?",
+    "answer": "It uses a familiar hinged operation for everyday entrance access.",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 4,
+  "fields": {
+    "product": 16,
+    "question": "What distinguishes a fiberglass entry door?",
+    "answer": "It uses a fiberglass-facing system suited to a versatile exterior entrance.",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 5,
+  "fields": {
+    "product": 16,
+    "question": "Where can fiberglass entry doors be used?",
+    "answer": "They can be considered for primary or secondary hinged exterior entrances.",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 6,
+  "fields": {
+    "product": 17,
+    "question": "How does a sliding patio door open?",
+    "answer": "The operating panel moves horizontally along its track.",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 7,
+  "fields": {
+    "product": 17,
+    "question": "Does a sliding patio door require swing space?",
+    "answer": "Its sliding operation avoids the floor-space needs of a hinged door.",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 8,
+  "fields": {
+    "product": 18,
+    "question": "Where are garden doors commonly used?",
+    "answer": "They commonly connect interior living areas with a garden, patio, or deck.",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 9,
+  "fields": {
+    "product": 18,
+    "question": "How does a garden door operate?",
+    "answer": "It uses a traditional hinged swinging operation.",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 10,
+  "fields": {
+    "product": 19,
+    "question": "What is a double-door configuration?",
+    "answer": "It is a coordinated pair of hinged door panels forming one broader entrance.",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 11,
+  "fields": {
+    "product": 19,
+    "question": "Where can double doors be useful?",
+    "answer": "They suit prominent entrances and projects that benefit from wider access.",
+    "order": 2
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 12,
+  "fields": {
+    "product": 20,
+    "question": "What is the purpose of a vented door?",
+    "answer": "It combines exterior access with an operable feature for controlled airflow.",
+    "order": 1
+  }
+},
+{
+  "model": "catalog.productfaq",
+  "pk": 13,
+  "fields": {
+    "product": 20,
+    "question": "Are all vented-door configurations the same?",
+    "answer": "No. Final configuration and availability depend on the selected product.",
+    "order": 2
+  }
+}
+]

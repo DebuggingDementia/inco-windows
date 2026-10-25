@@ -22,3 +22,12 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+server/venv/
+server/db.sqlite3
+server/.env
+server/media/
+server/staticfiles/
+
+__pycache__/
+*.pyc
