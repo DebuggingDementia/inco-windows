@@ -2,7 +2,7 @@ import { ArrowRight, Check, CircleX, FileCheck2, GlassWater, Handshake, Images, 
 import AnimatedSection from './AnimatedSection';
 
 const covered = ['Rot','Corrosion','Cracking','Warping','Pitting','Peeling','Blistering','Abnormal non-uniform fading'];
-const excluded = ['Improper installation','Accident, fire or flood','Abuse or poor maintenance','Oxidation or normal weather exposure','Excessive heat','Chemical contact','Causes unrelated to manufacture'];
+const excluded = ['Accident, fire or flood','Abuse or poor maintenance','Oxidation or normal weather exposure','Excessive heat','Chemical contact','Causes unrelated to manufacture'];
 const activation = ['Full name','Installation address','Contract or invoice number','Installation completion date','Product information','Proof of full payment'];
 const claims = [
   ['Submit Your Information','Provide contact information, installation address, contract number, and a description of the concern.',FileCheck2],
