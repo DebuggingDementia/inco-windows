@@ -64,11 +64,20 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-brand-border mt-12 pt-8 text-center">
-          <p className="text-xs text-brand-muted/60">
-            &copy; {new Date().getFullYear()} INCO Windows & Doors. All rights reserved.
-          </p>
-        </div>
+<div className="border-t border-brand-border mt-12 pt-8 text-center">
+  <p className="text-xs text-brand-muted/60">
+    &copy; {new Date().getFullYear()} INCO Windows & Doors. All rights reserved.
+  </p>
+
+  <a
+    href="/INCO_Privacy_Policy.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mt-3 inline-block text-xs text-brand-muted hover:text-brand-text transition-colors"
+  >
+    Privacy Policy (PDF)
+  </a>
+</div>
       </div>
     </footer>
   );
