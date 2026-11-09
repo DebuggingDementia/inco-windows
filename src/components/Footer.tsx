@@ -40,7 +40,7 @@ export default function Footer() {
                 <img src="/images/HomeStars-logo-vector.svg" alt="HomeStars" className="w-full h-full object-contain" />
               </div>
               <div className="w-16 h-10 bg-brand-card border border-brand-border rounded-lg flex items-center justify-center">
-                <img src="/images/energystar.png" alt="Energy Star" className="w-full h-full object-contain" />
+                <img src="/images/energystar.webp" alt="Energy Star" className="w-full h-full object-contain" />
               </div>
             </div>
           </div>

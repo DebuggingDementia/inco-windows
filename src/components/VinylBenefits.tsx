@@ -32,7 +32,7 @@ export default function VinylBenefits() {
           <AnimatedSection>
             <div className="bg-brand-card border border-brand-border rounded-3xl overflow-hidden aspect-square sm:aspect-[4/3] flex items-center justify-center">
               <img
-                src="/images/technical/vinyl.png"
+                src="/images/technical/vinyl.webp"
                 alt="Vinyl window construction and insulation detail"
                 className="w-full h-full object-contain"
                 loading="lazy"

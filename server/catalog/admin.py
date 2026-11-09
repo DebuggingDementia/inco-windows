@@ -7,6 +7,7 @@ from .models import (
     ProductImage,
     ProductBenefit,
     ProductFAQ,
+    ImageOptimizationSettings,
 )
 
 
@@ -101,7 +102,9 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
     prepopulated_fields = {
-        "slug": ("name",),
+        "slug": (
+            "name",
+        ),
     }
 
     ordering = (
@@ -171,7 +174,9 @@ class ProductAdmin(admin.ModelAdmin):
     )
 
     prepopulated_fields = {
-        "slug": ("title",),
+        "slug": (
+            "title",
+        ),
     }
 
     readonly_fields = (
@@ -221,6 +226,10 @@ class ProductAdmin(admin.ModelAdmin):
                     "hero_preview_large",
                     "hero_image",
                 ),
+                "description": (
+                    "Upload a PNG, JPG, JPEG or WebP image. "
+                    "The website automatically optimizes it."
+                ),
             },
         ),
         (
@@ -246,7 +255,10 @@ class ProductAdmin(admin.ModelAdmin):
         ),
     )
 
-    def hero_preview(self, obj):
+    def hero_preview(
+        self,
+        obj,
+    ):
         if obj.hero_image:
             return format_html(
                 '<img src="{}" style="width:65px;height:50px;'
@@ -259,7 +271,10 @@ class ProductAdmin(admin.ModelAdmin):
 
     hero_preview.short_description = "Image"
 
-    def hero_preview_large(self, obj):
+    def hero_preview_large(
+        self,
+        obj,
+    ):
         if obj.hero_image:
             return format_html(
                 '<img src="{}" style="max-width:320px;'
@@ -271,13 +286,100 @@ class ProductAdmin(admin.ModelAdmin):
 
         return "No image uploaded"
 
-    hero_preview_large.short_description = "Current Image"
+    hero_preview_large.short_description = (
+        "Current Image"
+    )
+
+
+# =========================================================
+# IMAGE QUALITY
+# SUPERUSER ONLY
+# =========================================================
+
+@admin.register(ImageOptimizationSettings)
+class ImageOptimizationSettingsAdmin(
+    admin.ModelAdmin
+):
+    readonly_fields = (
+        "updated_at",
+    )
+
+    fieldsets = (
+        (
+            "Image Quality",
+            {
+                "fields": (
+                    "quality",
+                ),
+                "description": (
+                    "Controls WebP quality for new image uploads. "
+                    "Recommended value: 84. "
+                    "Higher quality increases file size."
+                ),
+            },
+        ),
+        (
+            "System Information",
+            {
+                "classes": (
+                    "collapse",
+                ),
+                "fields": (
+                    "updated_at",
+                ),
+            },
+        ),
+    )
+
+    def has_module_permission(
+        self,
+        request,
+    ):
+        return request.user.is_superuser
+
+    def has_view_permission(
+        self,
+        request,
+        obj=None,
+    ):
+        return request.user.is_superuser
+
+    def has_change_permission(
+        self,
+        request,
+        obj=None,
+    ):
+        return request.user.is_superuser
+
+    def has_add_permission(
+        self,
+        request,
+    ):
+        return (
+            request.user.is_superuser
+            and not ImageOptimizationSettings.objects.exists()
+        )
+
+    def has_delete_permission(
+        self,
+        request,
+        obj=None,
+    ):
+        return False
 
 
 # =========================================================
 # ADMIN BRANDING
 # =========================================================
 
-admin.site.site_header = "INCO Windows & Doors"
-admin.site.site_title = "INCO Admin"
-admin.site.index_title = "Website Administration"
+admin.site.site_header = (
+    "INCO Windows & Doors"
+)
+
+admin.site.site_title = (
+    "INCO Admin"
+)
+
+admin.site.index_title = (
+    "Website Administration"
+)

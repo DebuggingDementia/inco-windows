@@ -20,6 +20,8 @@ const PHONE_LINK = 'tel:+14036173082';
 
 const CONTACT_EMAIL = 'office@incowindows.ca';
 
+const LOGO_SRC = '/images/inco-logo.webp';
+
 
 const navLinks = [
   {
@@ -186,10 +188,14 @@ export default function Navbar() {
             <a
               href="/"
               className="flex-shrink-0"
+              aria-label="INCO Windows & Doors home"
             >
               <img
-                src="/images/INCO-Windows-and-Doors-faithful(1).svg"
+                src={LOGO_SRC}
                 alt="INCO Windows & Doors"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="h-14 sm:h-16 w-auto object-contain"
               />
             </a>
@@ -222,8 +228,6 @@ export default function Navbar() {
                       <div className="invisible opacity-0 group-hover/nav:visible group-hover/nav:opacity-100 absolute top-full left-0 pt-3 transition-all">
                         <div className="w-[720px] max-w-[calc(100vw-2rem)] bg-brand-card border border-brand-border rounded-2xl p-3 shadow-2xl">
 
-                          {/* ALL WINDOWS */}
-
                           <a
                             href="/windows"
                             className="block px-4 py-2 text-sm font-medium text-[#DADADA] hover:text-white hover:bg-white/5 rounded-lg"
@@ -231,8 +235,6 @@ export default function Navbar() {
                             All Windows
                           </a>
 
-
-                          {/* PRODUCTS */}
 
                           {windowProducts.length > 0 && (
                             <div className="grid grid-cols-2 gap-x-4 border-t border-brand-border pt-2">
@@ -339,18 +341,9 @@ export default function Navbar() {
 
 
             {/* =================================================
-                DESKTOP CONTACT INFORMATION
+                FREE QUOTE
             ================================================= */}
 
-          
-
-
-            {/* =================================================
-                ORIGINAL FREE QUOTE BUTTON
-                KEPT COMMENTED OUT
-            ================================================= */}
-
-           
             <a
               href="/#quote"
               className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-brand-orange hover:bg-brand-orange-hover text-white text-sm font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-brand-orange/20"
@@ -359,7 +352,6 @@ export default function Navbar() {
 
               <ArrowRight size={14} />
             </a>
-           
 
 
             {/* =================================================
@@ -367,6 +359,7 @@ export default function Navbar() {
             ================================================= */}
 
             <button
+              type="button"
               onClick={() => {
                 setMobileOpen(true);
               }}
@@ -418,16 +411,19 @@ export default function Navbar() {
                   onClick={() => {
                     setMobileOpen(false);
                   }}
+                  aria-label="INCO Windows & Doors home"
                 >
                   <img
-                    src="/images/INCO-Windows-and-Doors-faithful(1).svg"
+                    src={LOGO_SRC}
                     alt="INCO Windows & Doors"
+                    decoding="async"
                     className="h-14 w-auto object-contain"
                   />
                 </a>
 
 
                 <button
+                  type="button"
                   onClick={() => {
                     setMobileOpen(false);
                   }}
@@ -445,8 +441,6 @@ export default function Navbar() {
               ================================================= */}
 
               <nav className="flex flex-col gap-1 min-h-0 overflow-y-auto">
-
-                {/* WINDOWS */}
 
                 <p className="text-xs uppercase tracking-widest text-brand-orange mt-1">
                   Windows
@@ -473,8 +467,6 @@ export default function Navbar() {
                 </div>
 
 
-                {/* DOORS */}
-
                 <p className="text-xs uppercase tracking-widest text-brand-orange mt-3">
                   Doors
                 </p>
@@ -499,8 +491,6 @@ export default function Navbar() {
 
                 </div>
 
-
-                {/* OTHER LINKS */}
 
                 {navLinks.map((link, index) => {
                   if (

@@ -8,26 +8,26 @@ interface CasingOption {
 const vinylOptions: CasingOption[] = [
   {
     name: 'Colonial Rosettes',
-    image: '/images/interior-casing/Colonial Vinyl with Rosette..png',
+    image: '/images/interior-casing/Colonial Vinyl with Rosette..webp',
   },
   {
     name: 'Colonial 45-degree',
-    image: '/images/interior-casing/Colonial 45 Vinyl.png',
+    image: '/images/interior-casing/Colonial 45 Vinyl.webp',
   },
   {
     name: 'Flat',
-    image: '/images/interior-casing/Flat Vinyl.png',
+    image: '/images/interior-casing/Flat Vinyl.webp',
   },
 ];
 
 const mdfOptions: CasingOption[] = [
   {
     name: 'Colonial',
-    image: '/images/interior-casing/Colonial MDF.png',
+    image: '/images/interior-casing/Colonial MDF.webp',
   },
   {
     name: 'Flat',
-    image: '/images/interior-casing/Flat MDF.png',
+    image: '/images/interior-casing/Flat MDF.webp',
   },
 ];
 
